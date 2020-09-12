@@ -25,4 +25,9 @@ export class AuthenticationService {
 
     console.log(response.message);
   }
+
+  async logout(username: string, password: string): Promise<void> {
+    localStorage.removeItem(this.token);
+    const response = await this.logout;
+  }
 }

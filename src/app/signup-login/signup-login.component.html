@@ -1,4 +1,5 @@
-<div align="center">
+
+  <div align="center">
     <p>Username</p>
     <input type="text" [(ngModel)]="user.username">
     <p>Password</p>
@@ -8,4 +9,6 @@
         <button (click)="signup()" class="btn">Sign Up</button>
     </div>
     <p *ngIf="invalidLogin" style="color: red">Invalid Login (Have you Signed Up?)</p>
+    
+    
 </div>

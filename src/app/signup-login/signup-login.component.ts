@@ -44,4 +44,9 @@ export class SignupLoginComponent implements OnInit {
 
   }
 
+  async logout(): Promise<void> {
+    await this.authService.logout(this.user.username,this.user.password);
+    await this.logout();
+  }
+
 }
