@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
+import { AuthenticationService } from '../authentication.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +9,9 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  constructor(private movieService: MovieService){}
+  user: any;
+  invalidLogin: boolean;
+  constructor(private movieService: MovieService, private authService: AuthenticationService){}
   ngOnInit(): void {
     this.myMovieList = this.movieService.getMovieList();
     this.searchResults = this.movieService.getSearchResults();
@@ -16,4 +20,10 @@ export class MainComponent implements OnInit {
   searchResults = [];
   myMovieList =  [];
   title = 'Angular Flix';
+
+  async logout(username: string, password: string): Promise<void> {
+    localStorage.removeItem(this.user);
+    const response = await this.logout;
+  }
 }
+

@@ -47,5 +47,8 @@ export class SignupLoginComponent implements OnInit {
   }
 
   
+  }
 
-}
+  
+
+
